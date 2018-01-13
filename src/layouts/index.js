@@ -9,6 +9,7 @@ import '../assets/scss/app.scss'
 
 class Template extends React.Component {
   render() {
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const { location, children } = get(this, 'props')
 
     let rootPath = `/`
@@ -20,13 +21,7 @@ class Template extends React.Component {
 
     return (
       <div>
-        <Helmet
-          title="Gatsby Default Starter"
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
+        <Helmet title={siteTitle} />
         <Header />
         <div
           style={{
@@ -43,6 +38,14 @@ class Template extends React.Component {
   }
 }
 
-
-
 export default Template
+
+export const siteQuery = graphql`
+  query metadataQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

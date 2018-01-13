@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'WeatherSpy',
+    author: 'Rob Abby',
+    description: 'An application to view the weather',
+    siteUrl: 'https://weatherspy.robabby.com',
   },
   plugins: [
     {
