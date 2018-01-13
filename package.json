@@ -10,8 +10,12 @@
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-sass": "^1.0.15",
     "gatsby-plugin-sharp": "^1.6.24",
+    "gatsby-plugin-typography": "^1.7.10",
     "gatsby-transformer-sharp": "^1.6.16",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "typeface-open-sans": "0.0.45",
+    "typeface-raleway": "0.0.45",
+    "typeface-roboto": "0.0.50"
   },
   "keywords": [
     "gatsby"
