@@ -5,6 +5,7 @@ module.exports = {
     description: 'An application to view the weather',
     siteUrl: 'https://weatherspy.robabby.com',
   },
+  pathPrefix: `/`,
   plugins: [
     {
       resolve: 'gatsby-plugin-typography',
