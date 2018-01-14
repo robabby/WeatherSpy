@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "axios": "^0.17.1",
+    "convert-units": "^2.3.4",
     "gatsby": "^1.9.153",
     "gatsby-image": "^1.0.33",
     "gatsby-link": "^1.6.34",
