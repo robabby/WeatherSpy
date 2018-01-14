@@ -1,10 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
 import get from 'lodash/get'
 
 import { rhythm, scale } from '../utils/typography'
 
-import Header from '../components/Header'
 import '../assets/scss/app.scss'
 
 class Template extends React.Component {
@@ -22,7 +22,6 @@ class Template extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        <Header />
         <div
           style={{
             margin: '0 auto',

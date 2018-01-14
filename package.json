@@ -15,6 +15,11 @@
     "gatsby-transformer-sharp": "^1.6.16",
     "lodash": "^4.17.4",
     "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.0.0",
+    "redux-thunk": "^2.2.0",
     "typeface-open-sans": "0.0.45",
     "typeface-raleway": "0.0.45",
     "typeface-roboto": "0.0.50"
