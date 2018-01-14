@@ -6,7 +6,6 @@ import {
 } from './types';
 
 export const getAirQuality = (coords) => async (dispatch) => {
-  console.log(coords);
   let { data } = await axios.get(api.getAirQualityUrl(coords))
   dispatch({ type: GET_AIR_QUALITY, payload: data })
 }

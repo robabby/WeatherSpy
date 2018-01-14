@@ -26,7 +26,6 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_CURRENT_WEATHER:
-      console.log('GET_CURRENT_WEATHER | action.payload ', action.payload);
 
       let { data, unit } = action.payload
 
