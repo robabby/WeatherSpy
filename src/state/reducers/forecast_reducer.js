@@ -8,12 +8,6 @@ export default (state = {}, action) => {
       console.log('GET_FORECAST | action.payload ', action.payload);
 
       let { data } = action.payload
-      //
-      // let temp = {...state.temp}
-      //
-      // temp[unit].current = data.main.temp
-      // temp[unit].min = data.main.temp_min
-      // temp[unit].max = data.main.temp_max
 
       return {
         city: data.city,
