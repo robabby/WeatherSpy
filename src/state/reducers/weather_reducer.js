@@ -3,7 +3,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  weatherClassName: 'wi wi-owm-day-800',
+  iconClassName: 'wi wi-owm-day-800',
   coord: {},
   main: {},
   weather: {},
@@ -42,7 +42,7 @@ export default (state = INITIAL_STATE, action) => {
         temp,
         humidity: data.main.humidity,
         wind: data.wind,
-        weatherClassName: 'wi wi-owm-' + data.weather[0].id
+        iconClassName: 'wi wi-owm-' + data.weather[0].id
       };
     default:
       return state;

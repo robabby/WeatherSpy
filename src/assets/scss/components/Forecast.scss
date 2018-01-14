@@ -1,0 +1,15 @@
+.ws-forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width:100vw;
+  height:40vh;
+}
+.ws-forecast-item {
+  border-right:1px solid #ccc;
+  padding:1rem;
+  // overflow-y: auto;
+
+  &:last-child {
+    border-right:none;
+  }
+}

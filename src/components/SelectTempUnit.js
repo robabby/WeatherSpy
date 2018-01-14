@@ -17,8 +17,10 @@ class SelectTempUnit extends Component {
 
     this.props.changeTempUnit(event.target.value)
 
-    if ((isMetric && !haveMetric) || (isBoth && !haveMetric)) {
+    if (isMetric && !haveMetric) {
       this.props.getCurrentWeather(event.target.value)
+    } else if (isBoth && !haveMetric) {
+      this.props.getCurrentWeather("metric")
     }
   }
   render() {
