@@ -11,7 +11,13 @@ module.exports = {
   getAirQualityUrl(coords) {
     let lat = coords.lat.toFixed()
     let lon = coords.lon.toFixed()
-    console.log(lat, lon)
     return `${this.apiUrl}pollution/v1/co/${lat},${lon}/current.json?appid=${this.apiKey}`
+  },
+  getWeatherMap(coords) {
+    let owmLayerName = 'precipitation'
+    let zoom = '10'
+    let lat = coords.lat.toFixed()
+    let lon = coords.lon.toFixed()
+    return `http://tile.openweathermap.org/map/${owmLayerName}/${zoom}/${lat}/${lon}.png?appid=${this.apiKey}`
   }
 }
