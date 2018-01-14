@@ -7,6 +7,6 @@ import {
 
 export const getForecast = (unit) => async (dispatch) => {
   let tempUnit = unit === 'both' ? 'celsius' : 'imperial'
-  let { data } = await axios.get(api.getWeatherUrl(unit))
-  dispatch({ type: GET_CURRENT_WEATHER, payload: { data, unit } })
+  let { data } = await axios.get(api.getForecastUrl(unit))
+  dispatch({ type: GET_FORECAST, payload: { data, unit } })
 }

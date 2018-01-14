@@ -18,6 +18,7 @@ class IndexPage extends React.Component {
   componentDidMount() {
     console.log('IndexPage | componentDidMount:this.props', this.props);
     this.props.getCurrentWeather(this.props.settings.unit)
+    this.props.getForecast(this.props.settings.unit)
   }
   componentWillReceiveProps() {
     // console.log('IndexPage | componentWillReceiveProps:this.props', this.props);
@@ -32,8 +33,8 @@ class IndexPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return state
+const mapStateToProps = ({ settings, weather, forecast }) => {
+  return { settings, weather, forecast }
 }
 
 export default connect(mapStateToProps, actions)(IndexPage);

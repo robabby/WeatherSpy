@@ -2,48 +2,22 @@ import {
   GET_FORECAST
 } from '../actions/types';
 
-const INITIAL_STATE = {
-  weatherClassName: 'wi wi-owm-day-800',
-  coord: {},
-  main: {},
-  weather: {},
-  temp: {
-    imperial: {
-      current: 0,
-      min: 0,
-      max: 0
-    },
-    metric: {
-      current: 0,
-      min: 0,
-      max: 0
-    }
-  },
-  humidity: 0,
-  wind: 0
-}
-
-export default (state = INITIAL_STATE, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case GET_FORECAST:
       console.log('GET_FORECAST | action.payload ', action.payload);
 
-      let { data, unit } = action.payload
-
-      let temp = {...state.temp}
-
-      temp[unit].current = data.main.temp
-      temp[unit].min = data.main.temp_min
-      temp[unit].max = data.main.temp_max
+      let { data } = action.payload
+      //
+      // let temp = {...state.temp}
+      //
+      // temp[unit].current = data.main.temp
+      // temp[unit].min = data.main.temp_min
+      // temp[unit].max = data.main.temp_max
 
       return {
-        coord: data.coord,
-        main: data.main,
-        weather: data.weather[0],
-        temp,
-        humidity: data.main.humidity,
-        wind: data.wind,
-        weatherClassName: 'wi wi-owm-' + data.weather[0].id
+        city: data.city,
+        list: data.list
       };
     default:
       return state;
