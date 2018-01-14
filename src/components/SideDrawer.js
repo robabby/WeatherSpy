@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import * as actions from '../state/actions'
 
 import SelectTempUnit from '../components/SelectTempUnit'
+import WeatherTriggers from '../components/WeatherTriggers'
 
 import '../assets/scss/components/SideDrawer.scss'
 
@@ -23,9 +24,8 @@ class SideDrawer extends React.Component {
       >
         <div className="ws-sideDrawer-content">
           <div>
-            <span>Select temperature unit:</span>
-            <br />
             <SelectTempUnit />
+            <WeatherTriggers />
           </div>
         </div>
       </div>

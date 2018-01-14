@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../state/actions'
 
+import '../assets/scss/components/SelectTempUnit.scss'
+
 class SelectTempUnit extends Component {
   constructor(props) {
     super(props)
@@ -25,11 +27,16 @@ class SelectTempUnit extends Component {
   }
   render() {
     return (
-      <select onChange={this.onChangeTempUnit} value={this.props.unit}>
-        <option value="imperial">Imperial</option>
-        <option value="metric">Metric</option>
-        <option value="both">Both</option>
-      </select>
+      <div className="ws-selectTempUnit">
+        <h3 className="ws-selectTempUnit__title">Units</h3>
+        <span>Select temperature unit:</span>
+        <br />
+        <select onChange={this.onChangeTempUnit} value={this.props.unit}>
+          <option value="imperial">Imperial</option>
+          <option value="metric">Metric</option>
+          <option value="both">Both</option>
+        </select>
+      </div>
     )
   }
 }

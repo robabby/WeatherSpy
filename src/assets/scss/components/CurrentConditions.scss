@@ -12,3 +12,21 @@
   justify-content: center;
   flex-flow: column;
 }
+.meta__location {
+  font-size: 2.5rem;
+}
+.meta__temp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 5rem;
+    margin-right: 1rem;
+  }
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 0;
+  }
+}

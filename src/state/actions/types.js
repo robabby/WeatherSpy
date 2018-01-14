@@ -4,3 +4,6 @@ export const GET_FORECAST = 'get_forecast';
 export const GET_AIR_QUALITY = 'get_air_quality';
 export const GET_WEATHER_MAP = 'get_weather_map';
 export const TOGGLE_SIDE_DRAWER = 'toggle_side_drawer';
+export const CREATE_NEW_TRIGGER = 'create_new_trigger';
+export const GET_TRIGGERS = 'get_triggers';
+export const DELETE_TRIGGER = 'delete_trigger';

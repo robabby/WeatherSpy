@@ -1,0 +1,16 @@
+.ws-triggers__getTriggers {
+  margin-top:1rem;
+}
+.ws-trigger {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    margin-right:1rem;
+  }
+}
+.ws-triggers__form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}

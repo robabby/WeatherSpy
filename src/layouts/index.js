@@ -21,6 +21,9 @@ class Template extends React.Component {
   }
   componentDidMount() {
     console.log(get(this, 'props'));
+    let { getTriggers } = get(this, 'props')
+
+    getTriggers()
   }
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -44,8 +47,8 @@ class Template extends React.Component {
   }
 }
 
-const mapStateToProps = ({ settings, sideDrawer }) => {
-  return { settings, sideDrawer }
+const mapStateToProps = ({ settings, sideDrawer, weatherTriggers }) => {
+  return { settings, sideDrawer, weatherTriggers }
 }
 
 export default connect(mapStateToProps, actions)(Template);

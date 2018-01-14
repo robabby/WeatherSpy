@@ -19,5 +19,11 @@ module.exports = {
     let lat = coords.lat.toFixed()
     let lon = coords.lon.toFixed()
     return `http://tile.openweathermap.org/map/${owmLayerName}/${zoom}/${lat}/${lon}.png?appid=${this.apiKey}`
+  },
+  getNewTriggerUrl() {
+    return `http://api.openweathermap.org/data/3.0/triggers?appid=d286a12239b52b89359c9baf67186f60`
+  },
+  getTriggersUrl() {
+    return `${this.apiUrl}data/3.0/triggers/?appid=${this.apiKey}`
   }
 }

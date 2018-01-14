@@ -37,10 +37,10 @@ class CurrentConditions extends React.Component {
       return (
         <div className="ws-current__meta">
           <h3 className="meta__location">{city.name}, {city.country}</h3>
-          <h1 className="meta__temp">
+          <div className="meta__temp">
             <i className={weather.iconClassName}></i>
-            {this.showTemp()}
-          </h1>
+            <h1>{this.showTemp()}</h1>
+          </div>
         </div>
       )
     } else {
