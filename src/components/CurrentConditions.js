@@ -15,11 +15,9 @@ class CurrentConditions extends React.Component {
     let isBoth = settings.unit === "both"
     let isImperial = settings.unit === "imperial"
     let isMetric = settings.unit === "metric"
-    let imperialCurrent = weather.temp.imperial.current
-    let metricCurrent = weather.temp.metric.current
-    let haveBoth = imperialCurrent && metricCurrent !== 0
+    let imperialCurrent = helpers.cleanDecimals(weather.temp.imperial.current)
 
-    if (isBoth && haveBoth) {
+    if (isBoth) {
       return `${imperialCurrent}F - ${helpers.convertToMetric(imperialCurrent)}C`
     } else if (isMetric) {
       return `${helpers.convertToMetric(imperialCurrent)}C`

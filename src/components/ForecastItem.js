@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Moment from 'react-moment'
+import moment from 'moment'
 import * as actions from '../state/actions'
+import helpers from '../utils/helpers'
 
 import '../assets/scss/components/CurrentConditions.scss'
 
@@ -18,22 +19,33 @@ class ForecastItem extends React.Component {
       tempMin,
       tempMax,
       main,
-      description
+      description,
+      hours
     } = this.props
     let iconClassName = 'wi wi-owm-' + id
+    let dayName = moment(day).format("dddd")
 
     return (
       <div className="ws-forecast-content">
-        <i className={iconClassName}></i>
-        <h2>{main}</h2>
-        <p>{tempMin} - {tempMax}</p>
+        <h2>{dayName}</h2>
+        <div>
+          <i className={iconClassName}></i>
+          <h3>{main}</h3>
+        </div>
+        <p>{helpers.cleanDecimals(tempMin)} - {helpers.cleanDecimals(tempMax)}</p>
+        {this.renderHours(hours)}
       </div>
     )
-    // return forecast.list.map((data, i) => {
-    //   if (data.dt_txt.includes(day)) {
-    //   }
-    // })
+  }
+  renderHours = (hours) => {
 
+    return hours.map((data, i) => {
+      // return (
+      //   <div key={i}>
+      //     hours
+      //   </div>
+      // )
+    })
   }
   render() {
     return (

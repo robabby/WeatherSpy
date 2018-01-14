@@ -31,15 +31,18 @@ class Forecast extends React.Component {
 
         if (date !== dt_sub) {
           date = dt_sub
+          let hours = forecast.list.filter(record => record.dt_txt.substring(0, 10) === date);
+
           return (
             <ForecastItem
               key={i}
               id={weather.id}
-              day={dt_sub}
+              day={data.dt_txt}
               tempMin={data.main.temp_min}
               tempMax={data.main.temp_max}
               main={weather.main}
               description={weather.description}
+              hours={hours}
             />
           )
         }

@@ -8,7 +8,7 @@ const config = {
   title: 'typography-theme-robabby',
   scaleRatio: 2.5,
   headerFontFamily: ['Roboto', 'sans-serif'],
-  headerWeight: 800,
+  headerWeight: 100,
   bodyFontFamily: ['Open Sans', 'sans-serif']
 }
 

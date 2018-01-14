@@ -5,11 +5,35 @@
   height:40vh;
 }
 .ws-forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   border-right:1px solid #ccc;
   padding:1rem;
   // overflow-y: auto;
 
   &:last-child {
     border-right:none;
+  }
+}
+.ws-forecast-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  height:100%;
+
+  > div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    i {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
   }
 }
