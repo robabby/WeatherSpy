@@ -9,7 +9,6 @@ import { rhythm, scale } from '../utils/typography'
 import * as actions from '../state/actions'
 
 import Header from '../components/Header'
-import SelectTempUnit from '../components/SelectTempUnit'
 import CurrentConditions from '../components/CurrentConditions'
 import Forecast from '../components/Forecast'
 
@@ -46,7 +45,6 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div className="ws-page">
-        <SelectTempUnit />
         <CurrentConditions />
         <Forecast />
         {/* {this.renderMap()} */}

@@ -24,7 +24,6 @@ class SelectTempUnit extends Component {
     }
   }
   render() {
-    // console.log('SelectTempUnit | this.props', this.props);
     return (
       <select onChange={this.onChangeTempUnit} value={this.props.unit}>
         <option value="imperial">Imperial</option>

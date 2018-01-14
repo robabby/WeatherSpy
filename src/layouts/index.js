@@ -4,13 +4,27 @@ import { connect } from 'react-redux'
 import get from 'lodash/get'
 
 import { rhythm, scale } from '../utils/typography'
+import SideDrawer from '../components/SideDrawer'
+import SideDrawerTrigger from '../components/SideDrawerTrigger'
+import * as actions from '../state/actions'
 
 import '../assets/scss/app.scss'
 
 class Template extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  handleSideDrawerTrigger = (event) => {
+    let { sideDrawer, toggleSideDrawer } = get(this, 'props')
+    toggleSideDrawer(sideDrawer.isOpen)
+    console.log("isOpen", sideDrawer.isOpen);
+  }
+  componentDidMount() {
+    console.log(get(this, 'props'));
+  }
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const { location, children } = get(this, 'props')
+    const { location, children, sideDrawer } = get(this, 'props')
 
     let rootPath = `/`
     let isRoot = location.pathname === rootPath
@@ -22,13 +36,19 @@ class Template extends React.Component {
     return (
       <div className="ws-site">
         <Helmet title={siteTitle} />
+        <SideDrawerTrigger onClick={this.handleSideDrawerTrigger} />
+        <SideDrawer isOpen={sideDrawer.isOpen} />
         {children()}
       </div>
     )
   }
 }
 
-export default Template
+const mapStateToProps = ({ settings, sideDrawer }) => {
+  return { settings, sideDrawer }
+}
+
+export default connect(mapStateToProps, actions)(Template);
 
 export const siteQuery = graphql`
   query metadataQuery {
