@@ -7,7 +7,7 @@ import 'typeface-open-sans'
 const config = {
   title: 'typography-theme-robabby',
   scaleRatio: 2.5,
-  headerFontFamily: ['Raleway', 'sans-serif'],
+  headerFontFamily: ['Roboto', 'sans-serif'],
   headerWeight: 800,
   bodyFontFamily: ['Open Sans', 'sans-serif']
 }
