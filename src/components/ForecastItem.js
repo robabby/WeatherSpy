@@ -4,7 +4,7 @@ import moment from 'moment'
 import * as actions from '../state/actions'
 import helpers from '../utils/helpers'
 
-import ShowTemp from '../components/ShowTemp'
+import ShowForecastTemp from '../components/ShowForecastTemp'
 
 import '../assets/scss/components/CurrentConditions.scss'
 
@@ -43,7 +43,7 @@ class ForecastItem extends React.Component {
       return (
         <div key={i} className="ws-forecastItem__hours">
           <div>
-            <ShowTemp temp={temp} />
+            <ShowForecastTemp temp={temp} />
             <i className={iconClassName}></i>
             {status}
             {time}

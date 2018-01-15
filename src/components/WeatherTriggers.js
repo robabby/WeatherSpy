@@ -26,7 +26,6 @@ class WeatherTriggers extends React.Component {
       unit: this.props.settings.unit,
       coords: weather.coord
     }
-    console.log(data);
     createNewTrigger(data);
   }
   getTriggersAsync = async () => {
@@ -34,7 +33,7 @@ class WeatherTriggers extends React.Component {
     await getTriggers()
   }
   handleDeleteTrigger = (id) => {
-    console.log(id);
+    // console.log(id);
   }
   renderTriggers = () => {
     let { weatherTriggers, settings } = this.props
@@ -43,7 +42,6 @@ class WeatherTriggers extends React.Component {
 
     if (haveTriggers && triggers.length > 0) {
       return triggers.map((data, i) => {
-        console.log("renderTriggers | data ", data);
         renderedTriggers++
 
         if (renderedTriggers <= triggers.length) {
@@ -52,6 +50,7 @@ class WeatherTriggers extends React.Component {
             <div key={i} className="ws-trigger">
               <span>{temp}</span>
               <button
+                ref="deleteTrigger"
                 onClick={this.handleDeleteTrigger(data._id)}
               >DELETE</button>
             </div>
@@ -66,9 +65,9 @@ class WeatherTriggers extends React.Component {
       )
     }
   }
-  componentWillRecieveProps() {
+  componentWillReceiveProps() {
     if (this.state.renderedTriggers < this.props.weatherTriggers.triggers.length) {
-      this.getTriggersAsync();
+      // this.getTriggersAsync();
     }
   }
   render() {
@@ -84,14 +83,14 @@ class WeatherTriggers extends React.Component {
               className="ws-triggers__submit"
               ref="triggersSubmit"
               onClick={this.handleNewTrigger}
-              >
-                Submit
-              </button>
+            >
+              Submit
+            </button>
           </div>
         </div>
         <div className="ws-triggers__getTriggers">
           <h3>Triggers</h3>
-          {this.renderTriggers()}
+          {/* {this.renderTriggers()} */}
         </div>
       </div>
     )

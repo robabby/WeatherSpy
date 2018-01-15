@@ -17,10 +17,9 @@ class Template extends React.Component {
   handleSideDrawerTrigger = (event) => {
     let { sideDrawer, toggleSideDrawer } = get(this, 'props')
     toggleSideDrawer(sideDrawer.isOpen)
-    console.log("isOpen", sideDrawer.isOpen);
   }
   componentDidMount() {
-    console.log(get(this, 'props'));
+    console.log("Template | this.props", get(this, 'props'));
     let { getTriggers } = get(this, 'props')
 
     getTriggers()

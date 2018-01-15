@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   coord: {},
   main: {},
   weather: {},
-  temp: {
+  temps: {
     imperial: {
       current: 0,
       min: 0,
@@ -26,24 +26,18 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_CURRENT_WEATHER:
-
-      let { data, unit } = action.payload
-
-      let temp = {...state.temp}
-
-      temp[unit].current = data.main.temp
-      temp[unit].min = data.main.temp_min
-      temp[unit].max = data.main.temp_max
+      console.log("GET_CURRENT_WEATHER | action.payload", action.payload);
+      let { data, temps } = action.payload
 
       return {
         coord: data.coord,
         main: data.main,
         weather: data.weather[0],
-        temp,
+        temps,
         humidity: data.main.humidity,
         wind: data.wind,
         iconClassName: 'wi wi-owm-' + data.weather[0].id
-      };
+      }
     default:
       return state;
   }

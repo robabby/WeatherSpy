@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import * as actions from '../state/actions'
 import helpers from '../utils/helpers'
 
-import ShowTemp from '../components/ShowTemp'
+import ShowCurrentTemp from '../components/ShowCurrentTemp'
 
 import '../assets/scss/components/CurrentConditions.scss'
 
@@ -12,17 +12,16 @@ class CurrentConditions extends React.Component {
     super(props)
   }
   renderCurrentConditions = () => {
-    let { forecast, weather } = this.props
-    let { temp, humidity } = weather
+    let { forecast, weather, settings } = this.props
+    let { main, humidity } = weather
     let { city } = forecast
-
     if (weather && city) {
       return (
         <div className="ws-current__meta">
           <h3 className="meta__location">{city.name}, {city.country}</h3>
           <div className="meta__temp">
             <i className={weather.iconClassName}></i>
-            <h1><ShowTemp temp={weather.main.temp} /></h1>
+            <h1><ShowCurrentTemp /></h1>
           </div>
         </div>
       )

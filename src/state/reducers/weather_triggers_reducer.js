@@ -13,13 +13,11 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CREATE_NEW_TRIGGER:
-      console.log("CREATE_NEW_TRIGGER | action.payload ", action.payload);
       return {
         haveTriggers: action.payload.length > 0,
         newTrigger: action.payload
       }
     case GET_TRIGGERS:
-      console.log("GET_TRIGGERS | action.payload ", action.payload);
       return {
         haveTriggers: action.payload.data.length > 0,
         triggers: action.payload.data

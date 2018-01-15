@@ -9,21 +9,7 @@ class SelectTempUnit extends Component {
     super(props)
   }
   onChangeTempUnit = (event) => {
-    let { temp } = this.props.weather
-    let isBoth = event.target.value === "both"
-    let isImperial = event.target.value === "imperial"
-    let isMetric = event.target.value === "metric"
-    let haveImperial = temp.imperial.current
-    let haveMetric = temp.metric.current
-    let haveBoth = haveImperial && haveMetric
-
-    this.props.changeTempUnit(event.target.value)
-
-    if (isMetric && !haveMetric) {
-      this.props.getCurrentWeather(event.target.value)
-    } else if (isBoth && !haveMetric) {
-      this.props.getCurrentWeather("metric")
-    }
+    this.props.changeTempUnit(this.props.settings.unit, event.target.value)
   }
   render() {
     return (
