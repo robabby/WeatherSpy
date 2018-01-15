@@ -3,31 +3,14 @@ import { connect } from 'react-redux'
 import * as actions from '../state/actions'
 import helpers from '../utils/helpers'
 
+import ShowTemp from '../components/ShowTemp'
+
 import '../assets/scss/components/CurrentConditions.scss'
 
 class CurrentConditions extends React.Component {
   constructor(props) {
     super(props)
   }
-
-  showTemp = () => {
-    let { settings, weather } = this.props
-    let isBoth = settings.unit === "both"
-    let isImperial = settings.unit === "imperial"
-    let isMetric = settings.unit === "metric"
-    let imperialCurrent = helpers.cleanDecimals(weather.temp.imperial.current)
-
-    if (isBoth) {
-      return `${imperialCurrent}F - ${helpers.convertToMetric(imperialCurrent)}C`
-    } else if (isMetric) {
-      return `${helpers.convertToMetric(imperialCurrent)}C`
-    } else if (isImperial) {
-      return `${imperialCurrent}F`
-    } else {
-      return `Loading...`
-    }
-  }
-
   renderCurrentConditions = () => {
     let { forecast, weather } = this.props
     let { temp, humidity } = weather
@@ -39,7 +22,7 @@ class CurrentConditions extends React.Component {
           <h3 className="meta__location">{city.name}, {city.country}</h3>
           <div className="meta__temp">
             <i className={weather.iconClassName}></i>
-            <h1>{this.showTemp()}</h1>
+            <h1><ShowTemp temp={weather.main.temp} /></h1>
           </div>
         </div>
       )

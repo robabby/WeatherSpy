@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import moment from 'moment'
 import * as actions from '../state/actions'
 
 import ForecastItem from '../components/ForecastItem'
@@ -11,8 +12,9 @@ class Forecast extends React.Component {
   }
   renderForecastItems() {
     let { forecast } = this.props
-    let date = new Date()
-    let today = date.toISOString().substring(0, 10)
+    let date = moment().format()
+    let now = Date.now()
+    let today = date.substring(0, 10)
 
     if(!forecast.list) {
       return (

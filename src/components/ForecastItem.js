@@ -4,13 +4,14 @@ import moment from 'moment'
 import * as actions from '../state/actions'
 import helpers from '../utils/helpers'
 
+import ShowTemp from '../components/ShowTemp'
+
 import '../assets/scss/components/CurrentConditions.scss'
 
 class ForecastItem extends React.Component {
   constructor(props) {
     super(props)
   }
-
   renderForecast = () => {
     let {
       forecast,
@@ -22,29 +23,33 @@ class ForecastItem extends React.Component {
       description,
       hours
     } = this.props
-    let iconClassName = 'wi wi-owm-' + id
     let dayName = moment(day).format("dddd")
 
     return (
       <div className="ws-forecast-content">
         <h2>{dayName}</h2>
-        <div>
-          <i className={iconClassName}></i>
-          <h3>{main}</h3>
-        </div>
-        <p>{helpers.cleanDecimals(tempMin)} - {helpers.cleanDecimals(tempMax)}</p>
         {this.renderHours(hours)}
       </div>
     )
   }
   renderHours = (hours) => {
-
     return hours.map((data, i) => {
-      // return (
-      //   <div key={i}>
-      //     hours
-      //   </div>
-      // )
+      let { dt_txt, main, weather } = data
+      let iconClassName = 'wi wi-owm-' + weather[0].id
+      let time = moment(dt_txt).format("h:mm:ss a")
+      let temp = helpers.cleanDecimals(main.temp)
+      let status = weather[0].main
+
+      return (
+        <div key={i} className="ws-forecastItem__hours">
+          <div>
+            <ShowTemp temp={temp} />
+            <i className={iconClassName}></i>
+            {status}
+            {time}
+          </div>
+        </div>
+      )
     })
   }
   render() {

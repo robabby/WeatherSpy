@@ -11,6 +11,7 @@ module.exports = {
     }
 
     let newTemp = convert(temp).from('K').to(type)
+    
     return this.cleanDecimals(newTemp)
   },
   convertToMetric(temp) {
@@ -23,6 +24,10 @@ module.exports = {
     return this.cleanDecimals(metricTemp)
   },
   cleanDecimals(val) {
-    return val.toFixed()
+    if (val % 1 !== 0) {
+      return val.toFixed()
+    } else {
+      return val
+    }
   }
 }
