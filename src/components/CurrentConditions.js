@@ -35,7 +35,7 @@ class CurrentConditions extends React.Component {
   }
   render() {
     return (
-      <div className="ws-current">
+      <div className="ws-currentConditions">
         {this.renderCurrentConditions()}
       </div>
     )
